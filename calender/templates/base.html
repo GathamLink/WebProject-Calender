@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% if title %}
+        <title>{{ title }} - Calender</title>
+        {% else %}
+        <title>Calender</title>
+        {% endif %}
+        <link rel="stylesheet" href="{{ url_for('static', filename='style/login.css') }}">
+        <script src="{{ url_for('static', filename='scripts/jquery-3.5.1.js') }}"></script>
+    </head>
+    <body>
+        <div id="login_section">
+            CALENDER |
+            <a href="{{ url_for('index') }}" id="Home">Home</a> |
+            <a href="{{ url_for('login') }}" class="login">Login</a> |
+            <a href="{{ url_for('signup') }}" class="login">Register</a>
+        </div>
+        <hr>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock %}
+    </body>
+</html>

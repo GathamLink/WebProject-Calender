@@ -1,0 +1,101 @@
+.login{
+    font-size: 20px;
+    font-style: italic;
+    background-color: #3599ff;
+    color: cornsilk;
+    text-decoration: none;
+}
+
+#Home{
+    font-size: 20px;
+    font-weight: bold;
+    font-style: normal;
+    background-color: #3599ff;
+    color: aliceblue;
+    text-decoration: none;
+}
+
+#login_section{
+    font-size: 30px;
+    font-weight: bolder;
+    background-color: darkgray;
+    color: black;
+    margin-left: auto;
+}
+
+#welcome{
+    width: 1920px;
+    height: 1080px;
+    margin: 20px;
+    background-image: url("back1.jpg");
+    background-size: 90% 90%;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: #0a8cff;
+    font-weight: bolder;
+    text-align: center;
+    font-size: 80px;
+}
+
+.loginview{
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    background-image: url("login.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    font-size: 20px;
+    font-weight: bold;
+    color: cornflowerblue;
+}
+
+.registerview{
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    background-image: url("login.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    font-size: 20px;
+    font-weight: bold;
+    color: deepskyblue;
+}
+
+h1 {
+    text-align: center;
+}
+
+h3 {
+    text-align: center;
+}
+
+a:hover {
+    color: red;
+    text-decoration: underline;
+}
+a:active {
+    text-decoration: blink;
+}
+
+#Home:hover {
+    color: red;
+    text-decoration: underline;
+}
+
+.button {
+    background-color: palegoldenrod;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.button:hover {
+    background-color: deepskyblue;
+}
+
+ul>li {
+    font-size: 15px;
+    list-style: none;
+    color: #ff3e3f;
+}

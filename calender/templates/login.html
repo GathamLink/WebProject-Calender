@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+    <script src="{{ url_for('static', filename='scripts/login.js') }}"></script>
+
+
+    <h1>Log In</h1>
+    <div class="loginview">
+        <form action="" method="post" novalidate id="loginform" >
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.username.label }}<br>
+            {{ form.username(size=32) }}<br>
+            <span id="checkuser"></span>
+
+            {% for error in form.username.errors %}
+            <span style="color: red">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.password.label }}<br>
+            {{ form.password(size=32) }}<br>
+
+            {% for error in form.username.errors %}
+            <span style="color: red">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.submit(class="button", onclick="test()") }}<br>
+            <span id="checklogin"></span>
+        </p>
+        </form>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends "events_base.html" %}
+{% block content %}
+    {% if title %}
+        <h2>{{ title }}</h2>
+    {% else %}
+        <h2>No Title</h2>
+    {% endif %}
+    <hr>
+    <table class="buttons">
+        <tr>
+            <td><input type="button" class="previous" name="test" value="Previous week" onclick="location.href='{{ url_for('previousweek') }}'"></td>
+            <td><input type="button" class="next" name="test" value="Next week" onclick="location.href='{{ url_for('nextweek') }}'"></td>
+        </tr>
+
+    </table>
+    <hr>
+    <div class="week">
+    <table border="1" class="weektable">
+    {% for weekday in weeks %}
+        <tr>
+        {% if weeks.index(weekday) == 0 %}
+            <td>{{ weekday }} | Mon</td>
+        {% elif weeks.index(weekday) == 1 %}
+            <td>{{ weekday }} | Tue</td>
+        {% elif weeks.index(weekday) == 2 %}
+            <td>{{ weekday }} | Wed</td>
+        {% elif weeks.index(weekday) == 3 %}
+            <td>{{ weekday }} | Thu</td>
+        {% elif weeks.index(weekday) == 4 %}
+            <td>{{ weekday }} | Fri</td>
+        {% elif weeks.index(weekday) == 5 %}
+            <td>{{ weekday }} | Sat</td>
+        {% elif weeks.index(weekday) == 6 %}
+            <td>{{ weekday }} | Sun</td>
+        {% endif %}
+        {% for event in events %}
+            {% if event.date.strftime("%Y-%m-%d") == weekday %}
+                {% if event.category == '0' %}
+                    <td class="event"><span>{{ event.time }} <br> Event <br> </span>{{ event.event }}</td>
+                {% else %}
+                    <td class="deadline"><span>{{ event.time }} <br> Deadline <br> </span>{{ event.event }}</td>
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+        </tr>
+    {% endfor %}
+    </table>
+    </div>
+
+{% endblock %}

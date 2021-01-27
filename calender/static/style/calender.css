@@ -1,0 +1,83 @@
+.home{
+    font-size: 20px;
+    font-style: normal;
+    background-color: #3599ff;
+    color: cornsilk;
+    text-decoration: none;
+}
+
+.message{
+    list-style: none;
+}
+
+#home_section{
+    font-size: 30px;
+    font-weight: bolder;
+    background-color: darkgray;
+    color: black;
+    margin-left: auto;
+}
+
+a:hover {
+    color: red;
+    text-decoration: underline;
+}
+a:active {
+    text-decoration: blink;
+}
+
+.add{
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    background-image: url("back2.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+#upload {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 80px;
+    font-weight: bolder;
+    color: cornflowerblue;
+    background-color: antiquewhite;
+}
+
+h3 {
+    text-align: center;
+    background-color: palegoldenrod;
+}
+
+h1:hover{
+    color: palegoldenrod;
+    background-color: red;
+}
+
+form p {
+    color: cornflowerblue;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#upload {
+    background-color: antiquewhite;
+}
+
+#upload:hover {
+    background-color: cornflowerblue;
+}
+
+.picture {
+    width: 1920px;
+    height: 1080px;
+    margin: 0px auto;
+    background-image: url("back1.jpg");
+    background-size: 90% 90%;
+    background-repeat: no-repeat;
+    background-position: center;
+}

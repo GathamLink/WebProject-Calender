@@ -1,0 +1,24 @@
+{% extends "events_base.html" %}
+{% block content %}
+    {% if title %}
+        <h2>{{ title }}</h2>
+    {% else %}
+        <h2>No Title</h2>
+    {% endif %}
+    <hr>
+    <table class="buttons">
+        <tr>
+            <td><input type="button" class="previous" name="test" value="Previous Day" onclick="location.href='{{ url_for('previousday') }}'"></td>
+            <td><a style="margin: 0px auto">{{ localdate }}</a></td>
+            <td><input type="button" class="next" name="test" value="Next Day" onclick="location.href='{{ url_for('nextday') }}'"></td>
+        </tr>
+    </table>
+    <hr>
+    {% for event in events %}
+        {% if event.category == '0' %}
+            <div class="event"><span>{{ event.time }} | Event | </span>{{ event.event }}</div>
+        {% else %}
+            <div class="deadline"><span>{{ event.time }} | Deadline | </span>{{ event.event }}</div>
+        {% endif %}
+    {% endfor %}
+{% endblock %}

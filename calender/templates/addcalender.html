@@ -1,0 +1,52 @@
+{% extends "calender_base.html" %}
+
+{% block content %}
+    <script src="{{ url_for('static', filename='scripts/addevent.js') }}"></script>
+
+    <h3>Add a new Events</h3>
+    <hr>
+    <div class="add">
+    <form action="" onsubmit="return check()" method="post" novalidate class="add">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.date.label }}<br>
+            {{ form.date(size=40, type="date") }}<br>
+
+            {% for error in form.date.errors %}
+            <span style="color: red; font-size: 12px">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.time.label }}<br>
+            {{ form.time(size=40, type="time") }}<br>
+
+            {% for error in form.time.errors %}
+            <span style="color: red; font-size: 12px">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.category.label }}<br>
+            {% for choice in form.category %}<br>
+                <tr>
+                    <td>{{ choice }}</td>
+                    <td>{{ choice.label }}</td>
+                </tr>
+            {% endfor %}
+
+            {% for error in form.category.errors %}
+            <span style="color: red; font-size: 12px">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.event.label }}<br>
+            {{ form.event(size=40) }}<br>
+
+            {% for error in form.event.errors %}
+            <span style="color: red; font-size: 12px">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>{{ form.submit(id="upload") }}</p>
+    </form>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends "events_base.html" %}
+{% block content %}
+    {% if title %}
+        <h2>{{ title }}</h2>
+    {% else %}
+        <h2>No Title</h2>
+    {% endif %}
+    <hr>
+    <table class="buttons">
+    <tr>
+        <td><input type="button" class="previous" name="test" value="Previous month" onclick="location.href='{{ url_for('previousmonth') }}'"></td>
+        <td><input type="button" class="next" name="test" value="Next month" onclick="location.href='{{ url_for('nextmonth') }}'"></td>
+    </tr>
+
+    </table>
+    <hr>
+    <table border="0" class="monthtable">
+        <th colspan="7">{{ startyear }} - {{ startmonth }}</th>
+        {% for week in monthcalender %}
+            <tr>
+                {% for day in week %}
+                    {% if day == 0 %}
+                        <td></td>
+                    {% else %}
+                        {% if day in days %}
+                            {% if type == 'ALL' %}
+                                <td style="background-color: palevioletred">{{ day }}</td>
+                            {% elif type == "EVENTS" %}
+                                <td style="background-color: aqua">{{ day }}</td>
+                            {% else %}
+                                <td style="background-color: red">{{ day }}</td>
+                            {% endif %}
+                        {% else %}
+                            <td>{{ day }}</td>
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+    <hr>
+    <h3>Events List: </h3>
+    {% for day in days%}
+        <ul>{{ startyear }} - {{ startmonth }} - {{ day }}</ul>
+        {% for event in events %}
+            {% if event.date.day == day %}
+                {% if event.category == '0' %}
+                    <li class="event"><span>{{ event.date }} {{ event.time }} | type=Event | </span>{{ event.event }}</li>
+                {% else %}
+                    <li class="deadline"><span>{{ event.date }} {{ event.time }} | type=Deadline | </span>{{ event.event }}</li>
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+    {% endfor %}
+{% endblock %}

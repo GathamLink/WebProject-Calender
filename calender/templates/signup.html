@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <script src="{{ url_for('static', filename='scripts/register.js') }}"></script>
+
+    <h1>Welcome! New User!</h1>
+    <h3>Please enter detailed information for register</h3>
+    <div class="registerview">
+    <form action="" onsubmit="return check()" method="post" novalidate >
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.username.label }}<br>
+            {{ form.username(size=40) }}<br>
+            <span id="checkuser"></span>
+
+            {% for error in form.username.errors %}
+            <span id="message" style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+
+        </p>
+        <p>
+            {{ form.email.label }}<br>
+            {{ form.email(size=40) }}<br>
+            <span id="checkemail"></span>
+
+            {% for error in form.email.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.password.label }}<br>
+            {{ form.password(size=40) }}<br>
+
+            {% for error in form.password.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.password2.label }}<br>
+            {{ form.password2(size=40) }}<br>
+
+            {% for error in form.password2.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.submit(class="button") }}
+        </p>
+    </form>
+    </div>
+
+{% endblock %}

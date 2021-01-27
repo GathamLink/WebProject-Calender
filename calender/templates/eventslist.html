@@ -1,0 +1,18 @@
+{% extends "events_base.html" %}
+{% block content %}
+    {% if title %}
+        <h2>{{ title }}</h2>
+    {% else %}
+        <h2>No Title</h2>
+    {% endif %}
+    <hr>
+    {% for event in events %}
+        {% if event.category == '0' %}
+            <div class="event"><span>{{ event.date  }} {{ event.time }} | Event | </span>{{ event.event }}</div>
+            <hr>
+        {% else %}
+            <div class="deadline"><span>{{ event.date }} {{ event.time }} | Deadline | </span>{{ event.event }}</div>
+            <hr>
+        {% endif %}
+    {% endfor %}
+{% endblock %}

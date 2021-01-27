@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% if title %}
+        <title>{{ title }} - Calender</title>
+        {% else %}
+        <title>Events</title>
+        {% endif %}
+            <link rel="stylesheet" href="{{ url_for('static', filename='style/events.css') }}">
+    </head>
+    <body>
+        <div class="home">
+            CALENDER - EVENTS |
+            <a href="{{ url_for('listall') }}" class="eventhome">List All</a> |
+            <a href="{{ url_for('listevents') }}" class="eventhome" id="eventsonly">Events Only</a> |
+            <a href="{{ url_for('listdeadlines') }}" class="eventhome" id="deadlingonly">Deadline Only</a> |
+            <a href="{{ url_for('back') }}" class="eventhome" id="back"><<- Back to Home</a>
+        </div>
+        <hr>
+        <div id="viewtype">
+            VIEW TYPE |
+            <input type="button" id="daily" name="Daily" value="Daily View" onclick="location.href='{{ url_for('daily') }}'">
+            <input type="button" id="weekly" name="Weekly" value="Weekly View" onclick="location.href='{{ url_for('weekly') }}'">
+            <input type="button" id="monthly" name="Monthly" value="Monthly View" onclick="location.href='{{ url_for('monthly') }}'">
+        </div>
+        <hr>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock %}
+    </body>
+</html>

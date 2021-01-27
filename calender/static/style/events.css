@@ -1,0 +1,171 @@
+.home{
+    font-size: 30px;
+    font-weight: bolder;
+    background-color: darkgray;
+    color: black;
+    margin-left: auto;
+}
+
+.eventhome{
+    font-size: 20px;
+    font-style: normal;
+    background-color: #3599ff;
+    color: cornsilk;
+    text-decoration: none;
+}
+
+#eventsonly{
+    background-color: palegoldenrod;
+    color: black;
+}
+
+#deadlingonly{
+    background-color: red;
+}
+
+#back{
+    background-color: aqua;
+    color: black;
+}
+
+.eventhome:hover {
+    color: greenyellow;
+    text-decoration: underline;
+}
+
+.eventhome:active {
+    text-decoration: blink;
+}
+
+#back:hover{
+    color: greenyellow;
+}
+
+#eventsonly:hover{
+    color: greenyellow;
+}
+
+#viewtype{
+    font-size: 25px;
+    font-weight: bolder;
+    background-color: slategrey;
+    color: black;
+    margin-left: auto;
+}
+
+#daily{
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+}
+
+#daily:hover {
+    background-color: red;
+}
+
+#weekly{
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+}
+
+#weekly:hover {
+    background-color: greenyellow;
+}
+
+#monthly{
+    font-weight: bold;
+    color: black;
+    font-size: 18px;
+}
+
+#monthly:hover {
+    background-color: deepskyblue;
+}
+
+.event{
+    color: black;
+    font-size: 18px;
+    /*text-align: center;*/
+    background-color: palegoldenrod;
+    border: 5px groove greenyellow;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.event span {
+    font-size: 15px;
+    font-weight: bold;
+    color: black;
+}
+
+.deadline span {
+    font-size: 15px;
+    font-weight: bold;
+    color: black;
+}
+
+/*div span {*/
+/*    */
+/*}*/
+
+/*div a {*/
+/*    white-space: nowrap;*/
+/*    font-size: 20px;*/
+/*}*/
+
+.deadline{
+    color: black;
+    font-size: 18px;
+    /*text-align: center;*/
+    background-color: #ff3e3f;
+    border: 5px groove orange;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+h2 {
+    text-align: center;
+}
+
+.buttons{
+    margin: 0px auto;
+}
+
+.monthtable{
+    font-size: 25px;
+    margin: 0px auto;
+}
+
+.weektable{
+    margin: 0px auto;
+}
+
+.previous{
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+}
+
+.previous:hover {
+    background-color: darkorange;
+}
+
+.next{
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+}
+
+.next:hover {
+    background-color: forestgreen;
+}
+
+table tr td a {
+    font-size: 26px;
+    font-weight: bolder;
+}
+
+
+
+
